@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mona Shores FTC Robotics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+  // GitHub Pages addresses are case-sensitive, and the Visualizer lives at /Visualizer/ (its
+  // repo's name). GitHub serves this page for any address the org site doesn't have, so
+  // /visualizer/, /VISUALIZER and the like land here: send them on, keeping the rest of the
+  // address and any #gh=... link part.
+  var path = location.pathname;
+  var match = path.match(/^\/visualizer(\/.*)?$/i);
+  if (match) location.replace("/Visualizer" + (match[1] || "/") + location.search + location.hash);
+</script>
+</head>
+<body>
+<p>Page not found. Looking for the <a href="/Visualizer/">Visualizer</a>?</p>
+</body>
+</html>
