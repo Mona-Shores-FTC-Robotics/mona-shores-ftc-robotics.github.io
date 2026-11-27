@@ -2,15 +2,115 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Mona Shores FTC Robotics</title>
+<title>Mona Shores FTC</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
-  // The org's home page opens the Visualizer (keeping any #gh=... link part).
-  location.replace("/Visualizer/" + location.search + location.hash);
+  // Old links to the org's home page that carry an Auto (#gh=..., ?...) still open the Visualizer.
+  if (location.hash || location.search) location.replace("/Visualizer/" + location.search + location.hash);
 </script>
-<meta http-equiv="refresh" content="0; url=/Visualizer/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;600&display=swap">
+<style>
+  :root {
+    --bg: #f3f5f8; --card: #ffffff; --ink: #15202b; --dim: #5b6676; --line: #d6dce4;
+    --uv: #6d28d9; --ir: #c2410c; --accent: #1d6fd8; --tag: #eef2f7;
+    --fd: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
+    --fb: "IBM Plex Sans", system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0e131a; --card: #161d27; --ink: #e7ecf3; --dim: #9aa6b6; --line: #2a3442;
+            --uv: #b794ff; --ir: #fb923c; --accent: #6aa8ff; --tag: #1f2834; color-scheme: dark; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.45 var(--fb); }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 28px 16px 48px; }
+  header { margin-bottom: 22px; }
+  h1 { font: 700 2.4rem/1 var(--fd); margin: 0 0 6px; letter-spacing: .01em; }
+  h1 .uv { color: var(--uv); } h1 .ir { color: var(--ir); }
+  .sub { color: var(--dim); margin: 0; }
+  .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px 10px; }
+  h2 { font: 700 1.25rem var(--fd); margin: 0 0 8px; text-transform: uppercase; letter-spacing: .04em; }
+  ul { list-style: none; margin: 0; padding: 0; }
+  li { padding: 7px 0; border-top: 1px solid var(--line); }
+  li:first-child { border-top: 0; }
+  a { color: var(--accent); font-weight: 600; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .d { display: block; color: var(--dim); font-size: .88rem; }
+  .t { font-size: .7rem; font-weight: 600; padding: 1px 6px; border-radius: 4px; background: var(--tag);
+       color: var(--dim); margin-left: 6px; vertical-align: 1px; white-space: nowrap; }
+  footer { color: var(--dim); font-size: .85rem; margin-top: 22px; }
+</style>
 </head>
 <body>
-<p><a href="/Visualizer/">Open the Visualizer</a></p>
+<div class="wrap">
+  <header>
+    <h1>Mona Shores FTC · <span class="uv">Ultraviolet 20245</span> &amp; <span class="ir">Infrared 19429</span></h1>
+    <p class="sub">BIOBUZZ 2026–27. Everything the team uses, in one place. Links marked <b>team</b> open only for people they've been shared with.</p>
+  </header>
+
+  <div class="grid">
+    <section>
+      <h2>Practice</h2>
+      <ul>
+        <li><a href="/Visualizer/drill/">Driver Drill</a><span class="d">Our controls on a laptop: full match, R-Solo opening, the Driver Station panel, timed pick-ups.</span></li>
+        <li><a href="/Visualizer/sim-lab/">Sim Lab</a><span class="d">The match and drill simulator.</span></li>
+        <li><a href="/Visualizer/sim-lab/lab/">Match Lab</a><span class="d">Try strategies across many simulated matches.</span></li>
+        <li><a href="/Visualizer/sim-lab/lessons/">Ten lessons from 12,000 simulated matches</a><span class="d">What the simulator taught us, as a read.</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Autos</h2>
+      <ul>
+        <li><a href="https://claude.ai/artifact/3EcdNf1vfw6acBpFBpphVY">Auto Scenarios</a><span class="t">team</span><span class="d">Every Auto with a partner, settings filled in: points, TIPs, parks and contacts, worst case first.</span></li>
+        <li><a href="/Visualizer/">Visualizer</a><span class="d">Draw and edit Autos; export to the robot.</span></li>
+        <li><a href="/Visualizer/autos.html">Auto Strategy</a><span class="d">Our Autos at a glance.</span></li>
+        <li><a href="/Visualizer/partner.html">Auto Match Planning</a><span class="d">Our Auto beside a partner's: crossings, contact, who TIPs when.</span></li>
+        <li><a href="/Visualizer/share.html">Plan our Auto together</a><span class="d">The page to send a partner team.</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Partners &amp; scouting</h2>
+      <ul>
+        <li><a href="https://claude.ai/artifact/MsF59dauheaGYvYVbNCDUm">States Partner Lookup</a><span class="t">team</span><span class="d">Which Auto to run with each States team.</span></li>
+        <li><a href="https://claude.ai/artifact/59WHN3SgkHNCJeUp4JJn7a">Midland Teams</a><span class="t">team</span><span class="d">Every States team, their matches and stats.</span></li>
+        <li><a href="https://claude.ai/artifact/1PCDVNGJRGsBYGs24mE1cZ">States Contenders Scouting</a><span class="t">team</span><span class="d">What the top Michigan teams do better.</span></li>
+        <li><a href="https://claude.ai/artifact/YPqBs3uCFqrT1k7pp5wFWB">States OPR Target</a><span class="t">team</span><span class="d">What rank 1 takes.</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Robot &amp; CAD</h2>
+      <ul>
+        <li><a href="https://claude.ai/artifact/RWpYDa79sMv9j6zgRAae8C">Corner Wheels 3D</a><span class="t">team</span><span class="d">The corner wheels in 3D.</span></li>
+        <li><a href="https://claude.ai/artifact/Vj6XpkQgeaniXJCuFFBE3A">GARDEN Corner Simulator</a><span class="t">team</span><span class="d">How the corner gather picks up POLLEN.</span></li>
+        <li><a href="https://claude.ai/artifact/JHnAuHkQsGqhPbH9vfNPH1">FLOWER Arms: Take 1 vs 2b</a><span class="t">team</span><span class="d">The printed FLOWER stick arms compared.</span></li>
+        <li><a href="https://claude.ai/artifact/QUzGXz4ZTiWUnuPYo9CWjh">Robot Wiring Sheet</a><span class="t">team</span><span class="d">Every port on both robots.</span></li>
+        <li><a href="https://github.com/Mona-Shores-FTC-Robotics/biobuzz">Robot code (biobuzz)</a><span class="d">The code, on GitHub.</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Event reviews</h2>
+      <ul>
+        <li><a href="https://claude.ai/artifact/FjSdNwSZY11ezgGtMK2cyA">Belding &amp; Fruitport score check</a><span class="t">team</span><span class="d">Where our points came from, and where they didn't.</span></li>
+        <li><a href="https://claude.ai/artifact/J4CLjCQyQrB7mS8nznDDBN">Fruitport Ranking Points</a><span class="t">team</span><span class="d">How RPs were won and lost.</span></li>
+        <li><a href="https://claude.ai/artifact/XfpBcypRWJK7AxjWps2Vky">Drive Team Button Study</a><span class="t">team</span><span class="d">Who pressed what, per match.</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Mentors</h2>
+      <ul>
+        <li><a href="https://claude.ai/artifact/QK3Sdhj51ppSWyLk51A9S7">States Board</a><span class="t">team</span><span class="d">What's being worked on before States.</span></li>
+        <li><a href="https://claude.ai/artifact/SWMuRc9mF82QHMZwpgSkcf">Weekend Run Sheet</a><span class="t">team</span><span class="d">Robot test checklist with write-in boxes.</span></li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>Looking for an old Visualizer link? Links with an Auto in them still open the Visualizer. Source: <a href="https://github.com/Mona-Shores-FTC-Robotics/mona-shores-ftc-robotics.github.io">this site's repo</a>.</footer>
+</div>
 </body>
 </html>
