@@ -28,7 +28,7 @@
   h1 { font: 700 2.4rem/1 var(--fd); margin: 0 0 6px; letter-spacing: .01em; }
   h1 .uv { color: var(--uv); } h1 .ir { color: var(--ir); }
   .sub { color: var(--dim); margin: 0; }
-  .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+  .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); }
   section { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px 10px; }
   h2 { font: 700 1.25rem var(--fd); margin: 0 0 8px; text-transform: uppercase; letter-spacing: .04em; }
   ul { list-style: none; margin: 0; padding: 0; }
@@ -47,6 +47,9 @@
   .b { font-size: .68rem; font-weight: 600; padding: 0 5px; border-radius: 4px; background: var(--tag); }
   .b.plan { color: var(--plan); } .b.sim { color: var(--uv); } .b.proven { color: var(--proven); }
   li.star > a { font-size: 1.05rem; }
+  details.more { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; }
+  details.more summary { cursor: pointer; font: 700 1.05rem var(--fd); text-transform: uppercase; letter-spacing: .04em; color: var(--dim); }
+  details.more summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   footer { color: var(--dim); font-size: .85rem; margin-top: 22px; }
   .hl { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-bottom: 16px; }
   .hl a.card { display: block; background: var(--card); border: 2px solid var(--line); border-radius: 12px; padding: 16px 18px; color: var(--ink); text-decoration: none; min-width: 0; }
@@ -71,86 +74,72 @@
   </div>
 
   <div class="grid">
-    <section class="wide">
-      <h2>Autos</h2>
-      <p class="legend"><span class="b plan">PLAN</span> as drawn in the Visualizer · <span class="b sim">SIM</span> the Java simulator running our real Auto code · <span class="b proven">PROVEN</span> our robots did it (logs, match video)</p>
-      <div class="cols">
-        <div>
-          <h3>What are our Autos?</h3>
-          <ul>
-            <li class="star"><a href="https://claude.ai/artifact/9jHhmCFRzJnuLHctM6XKCD">Auto Playbook</a><span class="t">team</span><span class="d">Start here. One card per Auto: when to pick it, what to ask the partner, INIT settings, what to expect.</span></li>
-            <li><a href="/Visualizer/autos.html">Auto Strategy</a><span class="d">Watch each Auto and pair play out; flip a TIP to "misses".</span></li>
-          </ul>
-        </div>
-        <div>
-          <h3>Which one this match?</h3>
-          <ul>
-            <li><a href="https://claude.ai/artifact/MsF59dauheaGYvYVbNCDUm">States Partner Lookup</a><span class="t">team</span><span class="d">Look up the partner: our Auto, its INIT settings and the questions to ask.</span></li>
-          </ul>
-          <h3>How sure are we?</h3>
-          <ul>
-            <li><a href="https://claude.ai/artifact/ScbuXWUQMCKLunURnEA7nJ">Auto Scenarios</a><span class="t">team</span><span class="d">Every simulated scenario: points, TIPs, parks and contacts, step by step.</span></li>
-          </ul>
-        </div>
-        <div>
-          <h3>For builders</h3>
-          <ul>
-            <li><a href="/Visualizer/">Visualizer</a><span class="d">Draw and edit Autos; export to the robot.</span></li>
-            <li><a href="/Visualizer/partner.html">Auto Match Planning</a><span class="d">Our Auto beside a partner's: crossings, contact, who TIPs when.</span></li>
-            <li><a href="/Visualizer/share.html">Plan our Auto together</a><span class="d">The page to send a partner team.</span></li>
-          </ul>
-        </div>
-      </div>
+    <section>
+      <h2>Match day</h2>
+      <p class="legend"><span class="b plan">PLAN</span> as drawn · <span class="b sim">SIM</span> Java simulator, our real Auto code · <span class="b proven">PROVEN</span> our robots did it</p>
+      <ul>
+        <li><a href="https://claude.ai/artifact/MsF59dauheaGYvYVbNCDUm">States Partner Lookup</a><span class="t">team</span><span class="d">Look up a partner: which Auto we run and what to ask them.</span></li>
+        <li><a href="https://claude.ai/artifact/59WHN3SgkHNCJeUp4JJn7a">Midland Teams</a><span class="t">team</span><span class="d">Every States team, their matches and stats.</span></li>
+        <li><a href="https://claude.ai/artifact/ScbuXWUQMCKLunURnEA7nJ">Auto Scenarios</a><span class="t">team</span><span class="d">How sure we are: every simulated case, worst first.</span></li>
+      </ul>
     </section>
 
     <section>
       <h2>Practice</h2>
       <ul>
-        <li><a href="/Visualizer/drill/">Driver Drill</a><span class="d">Our controls on a laptop: full match, R-Solo opening, the Driver Station panel, timed pick-ups.</span></li>
-        <li><a href="/Visualizer/sim-lab/">Sim Lab</a><span class="d">The match and drill simulator.</span></li>
-        <li><a href="/Visualizer/sim-lab/lab/">Match Lab</a><span class="d">Try strategies across many simulated matches.</span></li>
-        <li><a href="/Visualizer/sim-lab/lessons/">Ten lessons from 12,000 simulated matches</a><span class="d">What the simulator taught us, as a read.</span></li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>Partners &amp; scouting</h2>
-      <ul>
-        <li><a href="https://claude.ai/artifact/MsF59dauheaGYvYVbNCDUm">States Partner Lookup</a><span class="t">team</span><span class="d">Which Auto to run with each States team.</span></li>
-        <li><a href="https://claude.ai/artifact/59WHN3SgkHNCJeUp4JJn7a">Midland Teams</a><span class="t">team</span><span class="d">Every States team, their matches and stats.</span></li>
-        <li><a href="https://claude.ai/artifact/1PCDVNGJRGsBYGs24mE1cZ">States Contenders Scouting</a><span class="t">team</span><span class="d">What the top Michigan teams do better.</span></li>
-        <li><a href="https://claude.ai/artifact/YPqBs3uCFqrT1k7pp5wFWB">States OPR Target</a><span class="t">team</span><span class="d">What rank 1 takes.</span></li>
+        <li><a href="/Visualizer/drill/">Driver Drill</a><span class="d">Our controls on a laptop: full match, timed pick-ups, the Driver Station panel.</span></li>
+        <li><a href="/Visualizer/sim-lab/">Sim Lab</a><span class="d">The match simulator, with its Match Lab and lessons.</span></li>
       </ul>
     </section>
 
     <section>
-      <h2>Robot &amp; CAD</h2>
+      <h2>Our team</h2>
       <ul>
-        <li><a href="https://claude.ai/artifact/RWpYDa79sMv9j6zgRAae8C">Corner Wheels 3D</a><span class="t">team</span><span class="d">The corner wheels in 3D.</span></li>
-        <li><a href="https://claude.ai/artifact/Vj6XpkQgeaniXJCuFFBE3A">GARDEN Corner Simulator</a><span class="t">team</span><span class="d">How the corner gather picks up POLLEN.</span></li>
-        <li><a href="https://claude.ai/artifact/JHnAuHkQsGqhPbH9vfNPH1">FLOWER Arms: Take 1 vs 2b</a><span class="t">team</span><span class="d">The printed FLOWER stick arms compared.</span></li>
-        <li><a href="https://claude.ai/artifact/QUzGXz4ZTiWUnuPYo9CWjh">Robot Wiring Sheet</a><span class="t">team</span><span class="d">Every port on both robots.</span></li>
-        <li><a href="https://github.com/Mona-Shores-FTC-Robotics/biobuzz">Robot code (biobuzz)</a><span class="d">The code, on GitHub.</span></li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Event reviews</h2>
-      <ul>
-        <li><a href="https://claude.ai/artifact/FjSdNwSZY11ezgGtMK2cyA">Belding &amp; Fruitport score check</a><span class="t">team</span><span class="d">Where our points came from, and where they didn't.</span></li>
-        <li><a href="https://claude.ai/artifact/J4CLjCQyQrB7mS8nznDDBN">Fruitport Ranking Points</a><span class="t">team</span><span class="d">How RPs were won and lost.</span></li>
-        <li><a href="https://claude.ai/artifact/XfpBcypRWJK7AxjWps2Vky">Drive Team Button Study</a><span class="t">team</span><span class="d">Who pressed what, per match.</span></li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Mentors</h2>
-      <ul>
+        <li><a href="https://drive.google.com/file/d/1GySIbOWl-zpzsXwuuBmLdBpAHHBZwNAw/view">Ultraviolet 20245 portfolio</a><span class="d">Engineering portfolio, as of Fruitport (Nov 2026). PDF.</span></li>
+        <li><a href="https://drive.google.com/file/d/1YmKNUYdctnLYSrXgcRHA2s_cdO-6ecjU/view">Infrared 19429 portfolio</a><span class="d">Engineering portfolio, as of Fruitport (Nov 2026). PDF.</span></li>
         <li><a href="https://claude.ai/artifact/QK3Sdhj51ppSWyLk51A9S7">States Board</a><span class="t">team</span><span class="d">What's being worked on before States.</span></li>
-        <li><a href="https://claude.ai/artifact/SWMuRc9mF82QHMZwpgSkcf">Weekend Run Sheet</a><span class="t">team</span><span class="d">Robot test checklist with write-in boxes.</span></li>
       </ul>
     </section>
+
+    <section>
+      <h2>Builders</h2>
+      <ul>
+        <li><a href="/Visualizer/">Visualizer</a><span class="d">Draw and edit Autos; export to the robot.</span></li>
+        <li><a href="https://github.com/Mona-Shores-FTC-Robotics/biobuzz">Robot code</a><span class="d">The code, on GitHub.</span></li>
+        <li><a href="https://claude.ai/artifact/QUzGXz4ZTiWUnuPYo9CWjh">Robot Wiring Sheet</a><span class="t">team</span><span class="d">Every port on both robots.</span></li>
+      </ul>
+    </section>
+
+    <details class="more wide">
+      <summary>More</summary>
+      <div class="cols">
+        <div>
+          <h3>Auto tools</h3>
+          <ul>
+            <li><a href="/Visualizer/autos.html">Auto Strategy</a></li>
+            <li><a href="/Visualizer/partner.html">Auto Match Planning</a></li>
+            <li><a href="/Visualizer/share.html">Plan our Auto together</a> <span class="d">The page to send a partner team.</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Past events</h3>
+          <ul>
+            <li><a href="https://claude.ai/artifact/FjSdNwSZY11ezgGtMK2cyA">Belding &amp; Fruitport score check</a><span class="t">team</span></li>
+            <li><a href="https://claude.ai/artifact/J4CLjCQyQrB7mS8nznDDBN">Fruitport Ranking Points</a><span class="t">team</span></li>
+            <li><a href="https://claude.ai/artifact/XfpBcypRWJK7AxjWps2Vky">Drive Team Button Study</a><span class="t">team</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Scouting &amp; design notes</h3>
+          <ul>
+            <li><a href="https://claude.ai/artifact/1PCDVNGJRGsBYGs24mE1cZ">States Contenders Scouting</a><span class="t">team</span></li>
+            <li><a href="https://claude.ai/artifact/YPqBs3uCFqrT1k7pp5wFWB">States OPR Target</a><span class="t">team</span></li>
+            <li><a href="https://claude.ai/artifact/RWpYDa79sMv9j6zgRAae8C">Corner Wheels 3D</a><span class="t">team</span></li>
+            <li><a href="https://claude.ai/artifact/JHnAuHkQsGqhPbH9vfNPH1">FLOWER Arms: Take 1 vs 2b</a><span class="t">team</span></li>
+          </ul>
+        </div>
+      </div>
+    </details>
   </div>
 
   <footer>Looking for an old Visualizer link? Links with an Auto in them still open the Visualizer. Source: <a href="https://github.com/Mona-Shores-FTC-Robotics/mona-shores-ftc-robotics.github.io">this site's repo</a>.</footer>
