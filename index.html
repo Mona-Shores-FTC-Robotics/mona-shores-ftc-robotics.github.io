@@ -48,6 +48,14 @@
   .b.plan { color: var(--plan); } .b.sim { color: var(--uv); } .b.proven { color: var(--proven); }
   li.star > a { font-size: 1.05rem; }
   footer { color: var(--dim); font-size: .85rem; margin-top: 22px; }
+  .hl { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-bottom: 16px; }
+  .hl a.card { display: block; background: var(--card); border: 2px solid var(--line); border-radius: 12px; padding: 16px 18px; color: var(--ink); text-decoration: none; min-width: 0; }
+  .hl a.card:hover, .hl a.card:focus-visible { border-color: var(--accent); }
+  .hl a.card.go { border-color: var(--proven); }
+  .hl .k { font: 700 .78rem var(--fd); letter-spacing: .08em; text-transform: uppercase; color: var(--dim); }
+  .hl .n { display: block; font: 700 1.7rem/1.1 var(--fd); margin: 2px 0 4px; color: var(--accent); }
+  .hl a.card.go .n { color: var(--proven); }
+  .hl .d { font-size: .92rem; }
 </style>
 </head>
 <body>
@@ -56,6 +64,11 @@
     <h1>Mona Shores FTC · <span class="uv">Ultraviolet 20245</span> &amp; <span class="ir">Infrared 19429</span></h1>
     <p class="sub">BIOBUZZ 2026–27. Everything the team uses, in one place. Links marked <b>team</b> open only for people they've been shared with.</p>
   </header>
+
+  <div class="hl">
+    <a class="card go" href="https://claude.ai/artifact/2xUp6pSHbJYRwHZAbXZRLk"><span class="k">Robot · before the 5 Dec freeze</span><span class="n">Before States</span><span class="d">The 8 robot checks that could break a robot or lose a match. Tick them as they pass.</span> <span class="t">team</span></a>
+    <a class="card" href="https://claude.ai/artifact/9jHhmCFRzJnuLHctM6XKCD"><span class="k">Autos · match day</span><span class="n">Auto Playbook</span><span class="d">What our partner's Auto does, which of ours we run, and what they must do.</span> <span class="t">team</span></a>
+  </div>
 
   <div class="grid">
     <section class="wide">
