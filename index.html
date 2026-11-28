@@ -13,13 +13,13 @@
 <style>
   :root {
     --bg: #f3f5f8; --card: #ffffff; --ink: #15202b; --dim: #5b6676; --line: #d6dce4;
-    --uv: #6d28d9; --ir: #c2410c; --accent: #1d6fd8; --tag: #eef2f7;
+    --uv: #6d28d9; --ir: #c2410c; --accent: #1d6fd8; --tag: #eef2f7; --plan: #2563a8; --proven: #1a7a44;
     --fd: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
     --fb: "IBM Plex Sans", system-ui, sans-serif;
   }
   @media (prefers-color-scheme: dark) {
     :root { --bg: #0e131a; --card: #161d27; --ink: #e7ecf3; --dim: #9aa6b6; --line: #2a3442;
-            --uv: #b794ff; --ir: #fb923c; --accent: #6aa8ff; --tag: #1f2834; color-scheme: dark; }
+            --uv: #b794ff; --ir: #fb923c; --accent: #6aa8ff; --tag: #1f2834; --plan: #7fb2ec; --proven: #6fd39a; color-scheme: dark; }
   }
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.45 var(--fb); }
@@ -39,6 +39,14 @@
   .d { display: block; color: var(--dim); font-size: .88rem; }
   .t { font-size: .7rem; font-weight: 600; padding: 1px 6px; border-radius: 4px; background: var(--tag);
        color: var(--dim); margin-left: 6px; vertical-align: 1px; white-space: nowrap; }
+  .wide { grid-column: 1 / -1; }
+  .cols { display: grid; gap: 4px 22px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .cols > div { min-width: 0; }
+  h3 { font: 700 .82rem var(--fd); text-transform: uppercase; letter-spacing: .07em; color: var(--dim); margin: 10px 0 2px; }
+  .legend { margin: 0 0 4px; font-size: .85rem; color: var(--dim); }
+  .b { font-size: .68rem; font-weight: 600; padding: 0 5px; border-radius: 4px; background: var(--tag); }
+  .b.plan { color: var(--plan); } .b.sim { color: var(--uv); } .b.proven { color: var(--proven); }
+  li.star > a { font-size: 1.05rem; }
   footer { color: var(--dim); font-size: .85rem; margin-top: 22px; }
 </style>
 </head>
@@ -50,6 +58,38 @@
   </header>
 
   <div class="grid">
+    <section class="wide">
+      <h2>Autos</h2>
+      <p class="legend"><span class="b plan">PLAN</span> as drawn in the Visualizer · <span class="b sim">SIM</span> the Java simulator running our real Auto code · <span class="b proven">PROVEN</span> our robots did it (logs, match video)</p>
+      <div class="cols">
+        <div>
+          <h3>What are our Autos?</h3>
+          <ul>
+            <li class="star"><a href="https://claude.ai/artifact/9jHhmCFRzJnuLHctM6XKCD">Auto Playbook</a><span class="t">team</span><span class="d">Start here. One card per Auto: when to pick it, what to ask the partner, INIT settings, what to expect.</span></li>
+            <li><a href="/Visualizer/autos.html">Auto Strategy</a><span class="d">Watch each Auto and pair play out; flip a TIP to "misses".</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Which one this match?</h3>
+          <ul>
+            <li><a href="https://claude.ai/artifact/MsF59dauheaGYvYVbNCDUm">States Partner Lookup</a><span class="t">team</span><span class="d">Look up the partner: our Auto, its INIT settings and the questions to ask.</span></li>
+          </ul>
+          <h3>How sure are we?</h3>
+          <ul>
+            <li><a href="https://claude.ai/artifact/ScbuXWUQMCKLunURnEA7nJ">Auto Scenarios</a><span class="t">team</span><span class="d">Every simulated scenario: points, TIPs, parks and contacts, step by step.</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>For builders</h3>
+          <ul>
+            <li><a href="/Visualizer/">Visualizer</a><span class="d">Draw and edit Autos; export to the robot.</span></li>
+            <li><a href="/Visualizer/partner.html">Auto Match Planning</a><span class="d">Our Auto beside a partner's: crossings, contact, who TIPs when.</span></li>
+            <li><a href="/Visualizer/share.html">Plan our Auto together</a><span class="d">The page to send a partner team.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <section>
       <h2>Practice</h2>
       <ul>
@@ -60,16 +100,6 @@
       </ul>
     </section>
 
-    <section>
-      <h2>Autos</h2>
-      <ul>
-        <li><a href="https://claude.ai/artifact/ScbuXWUQMCKLunURnEA7nJ">Auto Scenarios</a><span class="t">team</span><span class="d">Every Auto with a partner, settings filled in: points, TIPs, parks and contacts, worst case first.</span></li>
-        <li><a href="/Visualizer/">Visualizer</a><span class="d">Draw and edit Autos; export to the robot.</span></li>
-        <li><a href="/Visualizer/autos.html">Auto Strategy</a><span class="d">Our Autos at a glance.</span></li>
-        <li><a href="/Visualizer/partner.html">Auto Match Planning</a><span class="d">Our Auto beside a partner's: crossings, contact, who TIPs when.</span></li>
-        <li><a href="/Visualizer/share.html">Plan our Auto together</a><span class="d">The page to send a partner team.</span></li>
-      </ul>
-    </section>
 
     <section>
       <h2>Partners &amp; scouting</h2>
